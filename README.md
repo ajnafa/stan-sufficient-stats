@@ -7,12 +7,12 @@
 
 This github repository contains Stan code for typical and sufficient
 statistic-based implementations of Bayesian models for various
-likelihoods. Sufficient statistics are core characteristic of
+likelihoods. Sufficient statistics are a core characteristic of
 likelihoods that belong to the [exponential
-family](https://en.wikipedia.org/wiki/Exponential_family) and con be
+family](https://en.wikipedia.org/wiki/Exponential_family) and can be
 exploited to drastically reduce the computational cost of Bayesian
-inference. For a general overview of sufficient statistics, see section
-25.9 of the [Stan User’s
+inference. For a general overview of sufficient statistics in Stan, see
+section 25.9 of the [Stan User’s
 Guide](https://mc-stan.org/docs/stan-users-guide/exploiting-sufficient-statistics.html).
 
 To download the development version of this repository, you can execute
