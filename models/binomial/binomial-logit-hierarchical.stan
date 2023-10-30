@@ -21,7 +21,7 @@ data {
     // Priors for the Parameters
     real mu_alpha;                              // Intercept Prior Mean
     real<lower=0> sigma_alpha;                  // Intercept Prior Std Dev
-    vector[D-1] mu_beta;                        // Coefficients Prior Mean
+    real mu_beta;                               // Coefficients Prior Mean
     real<lower=0> sigma_beta;                   // Coefficients Prior Std Dev
     real<lower=0> sigma_upsilon;                // Prior Std Dev for the Groups
 }
@@ -45,11 +45,11 @@ parameters {
 
 transformed parameters {
     vector[J] upsilon;                          // Actual Group Effects
-    upsilon = tau * upsilon_z;
+    upsilon = alpha + tau * upsilon_z;
 
     // Linear Predictor on the Logit Scale
     vector[N] mu;
-    mu = alpha + X * beta + upsilon[jj];
+    mu = X * beta + upsilon[jj];
 }
 
 model {
