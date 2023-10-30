@@ -19,7 +19,7 @@ data {
     // Priors for the Parameters
     real mu_alpha;                              // Intercept Prior Mean
     real<lower=0> sigma_alpha;                  // Intercept Prior Std Dev
-    vector[D-1] mu_beta;                        // Coefficients Prior Mean
+    real mu_beta;                               // Coefficients Prior Mean
     real<lower=0> sigma_beta;                   // Coefficients Prior Std Dev
 }
 
