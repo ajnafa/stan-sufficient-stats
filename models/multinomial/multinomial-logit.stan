@@ -41,10 +41,14 @@ transformed parameters {
 
 model {
     // Multinomial Likelihood
-    for (d in 1:D) {
-        target += multinomial_logit_lpmf(y[, d] | beta[d]');
+    profile("Likelihood") {
+        for (d in 1:D) {
+            target += multinomial_logit_lpmf(y[, d] | beta[d]');
+        }
     }
 
     // Priors
-    target += std_normal_lpdf(to_vector(kappa));
+    profile("Priors") {
+        target += std_normal_lpdf(to_vector(kappa));
+    }
 }
