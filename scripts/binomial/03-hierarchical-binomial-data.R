@@ -5,7 +5,6 @@
 # Load required libraries
 pacman::p_load(
     data.table,
-    furrr,
     arrow,
     extraDistr,
     MASS,
